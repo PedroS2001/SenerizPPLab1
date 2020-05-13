@@ -92,12 +92,26 @@ int main()
             break;
         case 'h':
             printf("h\n");
-            altaTrabajo(trabajo,idTrabajo,notebook,TAM,hServicios);
-            idTrabajo++;
+            if(altas)
+            {
+                altaTrabajo(trabajo,idTrabajo,notebook,TAM,hServicios);
+                idTrabajo++;
+            }
+            else
+            {
+                printf("Primero hay que dar un empleado de alta\n");
+            }
             break;
         case 'i':
             printf("i\n");
-            listarTrabajos(trabajo,TAM);
+            if(idTrabajo>=2)
+            {
+                listarTrabajos(trabajo,TAM);
+            }
+            else
+            {
+                printf("Primero debe hacer un trabajo\n");
+            }
             break;
         case 'j':
             printf("Saliendo\n");
