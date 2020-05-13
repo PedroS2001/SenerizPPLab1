@@ -13,3 +13,6 @@ typedef struct
 
 
 #endif // TRABAJO_H_INCLUDED
+void listarTrabajos(eTrabajo* trabajo, int tam);
+void inicializarTrabajos(eTrabajo* trabajo, int tam);
+void altaTrabajo(eTrabajo* trabajo, int id, eNotebook* notebook, int tamnot, eServicio* servicio);

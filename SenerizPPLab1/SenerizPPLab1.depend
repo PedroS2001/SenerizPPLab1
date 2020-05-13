@@ -63,3 +63,42 @@
 
 1589371736 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\utn.h
 
+1589376300 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\marca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"marca.h"
+
+1589376294 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\marca.h
+
+1589380688 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\notebook.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"notebook.h"
+
+1589380577 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\notebook.h
+	"marca.h"
+	"tipo.h"
+
+1589374471 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\tipo.h
+
+1589377973 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"servicio.h"
+
+1589377976 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\servicio.h
+
+1589374506 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipo.h"
+
+1589371753 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
