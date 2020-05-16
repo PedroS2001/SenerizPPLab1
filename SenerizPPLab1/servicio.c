@@ -10,5 +10,4 @@ void listarServicios(eServicio* servicio, int tam)
     {
         printf("%d %15s    %.2f\n",servicio[i].id, servicio[i].descripcion, servicio[i].precio);
     }
-
 }

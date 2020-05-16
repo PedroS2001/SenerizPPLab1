@@ -10,7 +10,7 @@
 	<stdlib.h>
 	<string.h>
 
-1589381458 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\main.c
+1589574846 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -28,32 +28,42 @@
 
 1589374471 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\tipo.h
 
-1589380577 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\notebook.h
+1589488248 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\notebook.h
 	"marca.h"
 	"tipo.h"
 
-1589377976 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\servicio.h
+1589487991 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\servicio.h
 
-1589380968 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\trabajo.h
+1589489099 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\trabajo.h
 	"fecha.h"
+	"notebook.h"
+	"servicio.h"
 
-1589380688 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\notebook.c
+1589489532 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\notebook.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"notebook.h"
+	"servicio.h"
+	"tipo.h"
+	"marca.h"
+	"trabajo.h"
+	"utn.h"
 
-1589377973 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\servicio.c
+1589425566 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\servicio.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"servicio.h"
 
-1589380722 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\trabajo.c
+1589489822 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"trabajo.h"
+	"notebook.h"
+	"servicio.h"
+	"utn.h"
 
 1589374506 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\tipo.c
 	<stdio.h>
@@ -62,70 +72,4 @@
 	"tipo.h"
 
 1589371736 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\utn.h
-
-1589376300 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\marca.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"marca.h"
-
-1589376294 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\marca.h
-
-1589380688 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\notebook.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"notebook.h"
-
-1589380577 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\notebook.h
-	"marca.h"
-	"tipo.h"
-
-1589374471 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\tipo.h
-
-1589377973 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\servicio.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"servicio.h"
-
-1589377976 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\servicio.h
-
-1589374506 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\tipo.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"tipo.h"
-
-1589371753 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\utn.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1589381929 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"fecha.h"
-	"marca.h"
-	"tipo.h"
-	"notebook.h"
-	"servicio.h"
-	"trabajo.h"
-	"utn.h"
-
-1589370977 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\fecha.h
-
-1589382039 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\trabajo.h
-	"fecha.h"
-	"notebook.h"
-	"servicio.h"
-
-1589371736 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\utn.h
-
-1589381943 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\aejercicios en clase\senerizpplab1\senerizpplab1\trabajo.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"trabajo.h"
 

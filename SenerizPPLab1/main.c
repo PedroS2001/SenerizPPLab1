@@ -15,7 +15,6 @@
 char menu();
 
 
-
 int main()
 {
     eNotebook notebook[TAM];
@@ -27,7 +26,7 @@ int main()
 
     inicializarTrabajos(trabajo,TAM);
 
-    int altas = 0;
+    int flagAltas = 0;
     char rtamenu;
     int idNotebook = 1;
     int idTrabajo = 1;
@@ -40,16 +39,14 @@ int main()
         switch(rtamenu)
         {
         case 'a':
-            printf("a\n");
             altaNotebook(notebook,TAM,idNotebook,hMarcas,hTipos);
             idNotebook++;
-            altas = 1;
+            flagAltas = 1;
             break;
         case 'b':
-            printf("b\n");
-            if(altas)
+            if(flagAltas)
             {
-                modificarNotebook(notebook,TAM,hTipos);
+                modificarNotebook(notebook,TAM,hTipos,hMarcas);
             }
             else
             {
@@ -57,10 +54,9 @@ int main()
             }
             break;
         case 'c':
-            printf("c\n");
-            if(altas)
+            if(flagAltas)
             {
-                bajaNotebook(notebook,TAM);
+                bajaNotebook(notebook,TAM,hMarcas,hTipos);
             }
             else
             {
@@ -69,9 +65,9 @@ int main()
             break;
         case 'd':
             printf("***NOTEBOOKS***\n");
-            if(altas)
+            if(flagAltas)
             {
-                imprimirNotebooks(notebook, TAM);
+                imprimirNotebooks(notebook, TAM, hMarcas, hTipos);
             }
             else
             {
@@ -92,26 +88,12 @@ int main()
             break;
         case 'h':
             printf("h\n");
-            if(altas)
-            {
-                altaTrabajo(trabajo,idTrabajo,notebook,TAM,hServicios);
-                idTrabajo++;
-            }
-            else
-            {
-                printf("Primero hay que dar un empleado de alta\n");
-            }
+            altaTrabajo(trabajo,idTrabajo,notebook,TAM,hServicios,hMarcas,hTipos);
+            idTrabajo++;
             break;
         case 'i':
             printf("i\n");
-            if(idTrabajo>=2)
-            {
-                listarTrabajos(trabajo,TAM);
-            }
-            else
-            {
-                printf("Primero debe hacer un trabajo\n");
-            }
+            listarTrabajos(trabajo,TAM,hServicios,4);
             break;
         case 'j':
             printf("Saliendo\n");
@@ -146,4 +128,3 @@ char menu()
 
     return respuesta;
 }
-
