@@ -8,12 +8,16 @@
 #include "trabajo.h"
 #include "utn.h"
 
-void imprimirNotebook(eNotebook notebook, eMarca marca, eTipo tipo)
+void imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo)
 {
+    char descTipo[20];
+    char descMarca[20];
+    cargarDescripcionMarca(descMarca, notebook.idMarca,marca,4);
+    cargarDescripcionTipo(descTipo, notebook.idTipo, tipo,4);
 
     if(notebook.isEmpty == 0)
     {
-        printf("%d  %10s  %10s    %10s    %.2f\n", notebook.id, notebook.modelo, marca.descripcion, tipo.descripcion, notebook.precio);
+        printf("%d  %10s  %10s    %10s    %.2f\n", notebook.id, notebook.modelo, descMarca, descTipo, notebook.precio);
     }
 
 }
@@ -21,14 +25,11 @@ void imprimirNotebook(eNotebook notebook, eMarca marca, eTipo tipo)
 void imprimirNotebooks(eNotebook* notebook, int tam, eMarca marca[], eTipo* tipo)
 {
     int i;
-    char descTipo[20];
-    char descMarca[20];
+
     printf("ID      MODELO       MARCA        TIPO      PRECIO\n");
     for(i=0; i<tam; i++)
     {
-        cargarDescripcionMarca(descMarca, notebook[i].idMarca, marca[i].descripcion,4);
-        cargarDescripcionTipo(descTipo, notebook[i].idTipo, tipo[i].descripcion,4);
-        imprimirNotebook(notebook[i], marca[i], tipo[i]);
+        imprimirNotebook(notebook[i], marca, tipo);
     }
 }
 
@@ -74,7 +75,7 @@ void bajaNotebook(eNotebook* notebook, int tam, eMarca* marca, eTipo* tipo, int 
     imprimirNotebooks(notebook,tam,marca,tipo);
     utn_getNumero(&idABorrar,"Ingrese el id de la notebook a dar de baja: ", "No existe notebook con ese id. Reingrese\n", 1, idNotebook-1, 2);
 
-    imprimirNotebook(notebook[idABorrar],marca[idABorrar],tipo[idABorrar]);
+    imprimirNotebook(notebook[idABorrar-1],marca,tipo);
 
     printf("Esta seguro que quiere dar de baja esta notebook?<s o n> ");
     fflush(stdin);
@@ -82,7 +83,7 @@ void bajaNotebook(eNotebook* notebook, int tam, eMarca* marca, eTipo* tipo, int 
 
     if(confirma == 's')
     {
-        notebook[idABorrar].isEmpty = 1;
+        notebook[idABorrar-1].isEmpty = 1;
         printf("Notebook eliminada\n");
     }
     else
@@ -104,22 +105,22 @@ void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca,
 
     if(utn_getNumero(&id,"Ingrese el id de la notebook a modificar: ", "No existe notebook con ese id. Reingrese\n", 1, idNotebook-1, 2) != -1)
     {
-        if(notebook[id].isEmpty == 0)
+        if(notebook[id-1].isEmpty == 0)
         {
-            imprimirNotebook(notebook[id],marca[id],tipo[id]);
+            imprimirNotebook(notebook[id-1],marca,tipo);
             printf("Que desea modificar de esta notebook? \n");
             utn_getNumero(&modifica,"1)Precio\n2)Tipo\n3)Cancelar ","Error\n",1,3,2 );
             if(modifica == 1)
             {
                 utn_getNumeroFlotante(&nuevoPrecio,"Ingrese nuevo precio: ", "Error\n", 1, 99999.9,2);
-                notebook[id].precio = nuevoPrecio;
+                notebook[id-1].precio = nuevoPrecio;
                 printf("\n");
             }
             else if(modifica==2)
             {
                 imprimirTipos(tipo,4);
                 utn_getNumero(&nuevoTipo,"Ingrese el id del nuevo tipo: ", "Error\n",5000,5003,2);
-                notebook[id].idTipo = nuevoTipo;
+                notebook[id-1].idTipo = nuevoTipo;
                 printf("\n");
             }
             else if(modifica==3)

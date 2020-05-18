@@ -9,11 +9,12 @@
 #include "servicio.h"
 #include "trabajo.h"
 #include "utn.h"
+#include "datawarehouse.h"
 
 #define TAM 10
 
 char menu();
-
+int hardcodearNotebooks(eNotebook* notebook, int cant);
 
 int main()
 {
@@ -31,6 +32,11 @@ int main()
 
     inicializarTrabajos(trabajo,TAM);
     inicializarNotebooks(notebook,TAM);
+
+    hardcodearNotebooks(notebook,7);
+    flagAltas = 1;
+    idNotebook += 7;
+
 
     do
     {
@@ -86,12 +92,10 @@ int main()
             listarServicios(hServicios,4);
             break;
         case 'h':
-            printf("h\n");
             altaTrabajo(trabajo,idTrabajo,notebook,TAM,hServicios,hMarcas,hTipos);
             idTrabajo++;
             break;
         case 'i':
-            printf("i\n");
             listarTrabajos(trabajo,TAM,hServicios,4);
             break;
         case 'j':
@@ -126,4 +130,19 @@ char menu()
     utn_getCaracter(&respuesta,"Que desea hacer? ","Error. Asegurese que la letra este en minusculas\n",'a','j',2);
 
     return respuesta;
+}
+
+int hardcodearNotebooks(eNotebook* notebook, int cant)
+{
+    int i;
+    for(i=0;i<cant;i++)
+    {
+        notebook[i].id = hardodeIds[i];
+        strcpy(notebook[i].modelo, hardcodeModelos[i]);
+        notebook[i].idMarca = hardcodeIdMarca[i];
+        notebook[i].idTipo = hardcodeIdTipo[i];
+        notebook[i].precio = hardcodePrecios[i];
+        notebook[i].isEmpty = 0;
+    }
+    return 0;
 }

@@ -149,3 +149,157 @@
 
 1589815149 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\datawarehouse.h
 
+1589829828 source:c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+	"marca.h"
+	"tipo.h"
+	"notebook.h"
+	"servicio.h"
+	"trabajo.h"
+	"utn.h"
+	"datawarehouse.h"
+
+1589370977 c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\fecha.h
+
+1589817624 c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\marca.h
+
+1589817647 c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\tipo.h
+
+1589829599 c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\notebook.h
+	"marca.h"
+	"tipo.h"
+
+1589817614 c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\servicio.h
+
+1589817633 c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\trabajo.h
+	"fecha.h"
+	"notebook.h"
+	"servicio.h"
+
+1589371736 c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\utn.h
+
+1589817603 source:c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\marca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"marca.h"
+
+1589830082 source:c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\notebook.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"notebook.h"
+	"servicio.h"
+	"tipo.h"
+	"marca.h"
+	"trabajo.h"
+	"utn.h"
+
+1589817578 source:c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"servicio.h"
+
+1589817591 source:c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipo.h"
+
+1589817605 source:c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"trabajo.h"
+	"notebook.h"
+	"servicio.h"
+	"utn.h"
+
+1589371753 source:c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589815149 c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\datawarehouse.h
+
+1589829828 source:c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+	"marca.h"
+	"tipo.h"
+	"notebook.h"
+	"servicio.h"
+	"trabajo.h"
+	"utn.h"
+	"datawarehouse.h"
+
+1589370977 c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\fecha.h
+
+1589817624 c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\marca.h
+
+1589817647 c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\tipo.h
+
+1589829599 c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\notebook.h
+	"marca.h"
+	"tipo.h"
+
+1589817614 c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\servicio.h
+
+1589817633 c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\trabajo.h
+	"fecha.h"
+	"notebook.h"
+	"servicio.h"
+
+1589371736 c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\utn.h
+
+1589815149 c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\datawarehouse.h
+
+1589817603 source:c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\marca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"marca.h"
+
+1589830082 source:c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\notebook.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"notebook.h"
+	"servicio.h"
+	"tipo.h"
+	"marca.h"
+	"trabajo.h"
+	"utn.h"
+
+1589817578 source:c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"servicio.h"
+
+1589817591 source:c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipo.h"
+
+1589817605 source:c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"trabajo.h"
+	"notebook.h"
+	"servicio.h"
+	"utn.h"
+
+1589371753 source:c:\users\noel\desktop\copias\senerizpplab1 -2 hardcode y imprime bien - copia\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

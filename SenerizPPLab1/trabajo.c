@@ -33,9 +33,7 @@ void listarTrabajos(eTrabajo* trabajo, int tam, eServicio servicios[], int tamse
     int i;
     char nombreServicio[20];
 
-    system("cls");
     printf("IDNOTEBOOK        SERVICIO           FECHA\n");
-
 
     for(i=0; i<tam; i++)
     {

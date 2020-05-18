@@ -17,7 +17,7 @@ typedef struct
 #endif // NOTEBOOK_H_INCLUDED
 
 void inicializarNotebooks(eNotebook* notebook, int tam);
-void imprimirNotebook(eNotebook notebook, eMarca marca, eTipo tipo);
+void imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo);
 void imprimirNotebooks(eNotebook* notebook, int tam,eMarca* marca, eTipo* tipo);
 int altaNotebook(eNotebook* notebook,int tam, int idNotebook,eMarca* marca,eTipo* tipo);
 void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca, int idNotebook);
