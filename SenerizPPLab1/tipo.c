@@ -3,7 +3,13 @@
 #include <string.h>
 #include "tipo.h"
 
-void imprimirTipos(eTipo* tipo, int tam)
+/** \brief imprime los tipos con sus id y descripcion
+ *
+ * \param estructura de tipos
+ * \param tamaño de la estructura
+ */
+
+void listarTipos(eTipo* tipo, int tam)
 {
     int i;
     printf("ID   TIPO\n");
@@ -12,6 +18,15 @@ void imprimirTipos(eTipo* tipo, int tam)
         printf("%d   %s\n",tipo[i].id, tipo[i].descripcion);
     }
 }
+
+/** \brief carga la descripcion del tipo
+ *
+ * \param cadena en la que se va a copiar la descripcion
+ * \param id que estoy buscando cargar la descripcion
+ * \param array de tipos
+ * \param tamaño del array
+ * \return 0 si pudo cargar la descripcion y -1 si no pudo
+ */
 
 int cargarDescripcionTipo(char descripcion[], int id, eTipo tipos[], int tam)
 {

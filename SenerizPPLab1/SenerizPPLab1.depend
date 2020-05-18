@@ -81,7 +81,7 @@
 
 1589817624 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\marca.h
 
-1589817705 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.c
+1589837258 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -91,6 +91,7 @@
 	"marca.h"
 	"trabajo.h"
 	"utn.h"
+	"datawarehouse.h"
 
 1589832488 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.h
 	"marca.h"
@@ -302,4 +303,81 @@
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+
+1589817603 source:c:\users\noel\desktop\senerizpplab1 - copia\marca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"marca.h"
+
+1589817624 c:\users\noel\desktop\senerizpplab1 - copia\marca.h
+
+1589839315 source:c:\users\noel\desktop\senerizpplab1 - copia\notebook.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"notebook.h"
+	"servicio.h"
+	"tipo.h"
+	"marca.h"
+	"trabajo.h"
+	"utn.h"
+	"datawarehouse.h"
+
+1589832488 c:\users\noel\desktop\senerizpplab1 - copia\notebook.h
+	"marca.h"
+	"tipo.h"
+
+1589838173 c:\users\noel\desktop\senerizpplab1 - copia\tipo.h
+
+1589817614 c:\users\noel\desktop\senerizpplab1 - copia\servicio.h
+
+1589817633 c:\users\noel\desktop\senerizpplab1 - copia\trabajo.h
+	"fecha.h"
+	"notebook.h"
+	"servicio.h"
+
+1589370977 c:\users\noel\desktop\senerizpplab1 - copia\fecha.h
+
+1589371736 c:\users\noel\desktop\senerizpplab1 - copia\utn.h
+
+1589815149 c:\users\noel\desktop\senerizpplab1 - copia\datawarehouse.h
+
+1589817578 source:c:\users\noel\desktop\senerizpplab1 - copia\servicio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"servicio.h"
+
+1589371753 source:c:\users\noel\desktop\senerizpplab1 - copia\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589839302 source:c:\users\noel\desktop\senerizpplab1 - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"fecha.h"
+	"marca.h"
+	"tipo.h"
+	"notebook.h"
+	"servicio.h"
+	"trabajo.h"
+	"utn.h"
+
+1589838182 source:c:\users\noel\desktop\senerizpplab1 - copia\tipo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipo.h"
+
+1589838273 source:c:\users\noel\desktop\senerizpplab1 - copia\trabajo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"trabajo.h"
+	"notebook.h"
+	"servicio.h"
+	"utn.h"
 

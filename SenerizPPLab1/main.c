@@ -11,15 +11,17 @@
 #include "utn.h"
 
 #define TAM 10
+#define CANTHARD 10
 
 char menu();
+
 
 int main()
 {
     eNotebook notebook[TAM];
-    eMarca hMarcas[4] = {{1000,"Compaq"},{1001,"Asus"},{1002,"Acer"},{1003,"HP"} };
-    eTipo hTipos[4] = {{5000,"Gamer"},{5001,"Disenio"},{5002,"Ultrabook"},{5003,"Normalita"} };
-    eServicio hServicios[4] = {{20000,"Bateria",250},{20001,"Antivirus",300},{20002,"Actualizacion",400},{20003,"Fuente",600}};
+    eMarca hMarcas[] = {{1000,"Compaq"},{1001,"Asus"},{1002,"Acer"},{1003,"HP"} };
+    eTipo hTipos[] = {{5000,"Gamer"},{5001,"Disenio"},{5002,"Ultrabook"},{5003,"Normalita"} };
+    eServicio hServicios[] = {{20000,"Bateria",250},{20001,"Antivirus",300},{20002,"Actualizacion",400},{20003,"Fuente",600}};
     eTrabajo trabajo[TAM];
 
 
@@ -31,10 +33,10 @@ int main()
     inicializarTrabajos(trabajo,TAM);
     inicializarNotebooks(notebook,TAM);
 
-        /*hardcodearNotebooks(notebook,7);
+    hardcodearNotebooks(notebook,CANTHARD);
     flagAltas = 1;
-    idNotebook += 7;
-        */
+    idNotebook += CANTHARD;
+
 
     do
     {
@@ -42,9 +44,17 @@ int main()
         switch(rtamenu)
         {
         case 'a':
-            altaNotebook(notebook,TAM,idNotebook,hMarcas,hTipos);
-            idNotebook++;
-            flagAltas = 1;
+            if(idNotebook <= TAM)
+            {
+
+                altaNotebook(notebook,TAM,idNotebook,hMarcas,hTipos);
+                idNotebook++;
+                flagAltas = 1;
+            }
+            else
+            {
+                printf("No hay lugar disponible\n");
+            }
             break;
         case 'b':
             if(flagAltas)
@@ -70,6 +80,7 @@ int main()
             printf("***NOTEBOOKS***\n");
             if(flagAltas)
             {
+                ordenarNotebooks(notebook,TAM,hMarcas);
                 imprimirNotebooks(notebook, TAM, hMarcas, hTipos);
             }
             else
@@ -83,15 +94,17 @@ int main()
             break;
         case 'f':
             printf("***TIPOS***\n");
-            imprimirTipos(hTipos,4);
+            listarTipos(hTipos,4);
             break;
         case 'g':
             printf("***SERVICIOS***\n");
             listarServicios(hServicios,4);
             break;
         case 'h':
-            altaTrabajo(trabajo,idTrabajo,notebook,TAM,hServicios,hMarcas,hTipos);
-            idTrabajo++;
+            if(altaTrabajo(trabajo,idTrabajo,notebook,TAM,hServicios,hMarcas,hTipos));
+            {
+                idTrabajo++;
+            }
             break;
         case 'i':
             listarTrabajos(trabajo,TAM,hServicios,4);
