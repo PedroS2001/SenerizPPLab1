@@ -92,7 +92,7 @@
 	"trabajo.h"
 	"utn.h"
 
-1589815625 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.h
+1589832488 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.h
 	"marca.h"
 	"tipo.h"
 
@@ -121,7 +121,7 @@
 	<string.h>
 	"tipo.h"
 
-1589817605 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\trabajo.c
+1589832359 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -135,7 +135,7 @@
 	<stdlib.h>
 	<string.h>
 
-1589815615 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\main.c
+1589832509 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

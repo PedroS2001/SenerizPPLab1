@@ -7,6 +7,8 @@
 #include "marca.h"
 #include "trabajo.h"
 #include "utn.h"
+#include "datawarehouse.h"
+
 
 void imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo)
 {
@@ -134,3 +136,19 @@ void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca,
         }
     }
 }
+
+int hardcodearNotebooks(eNotebook* notebook, int cant)
+{
+    int i;
+    for(i=0;i<cant;i++)
+    {
+        notebook[i].id = hardodeIds[i];
+        strcpy(notebook[i].modelo, hardcodeModelos[i]);
+        notebook[i].idMarca = hardcodeIdMarca[i];
+        notebook[i].idTipo = hardcodeIdTipo[i];
+        notebook[i].precio = hardcodePrecios[i];
+        notebook[i].isEmpty = 0;
+    }
+    return 0;
+}
+

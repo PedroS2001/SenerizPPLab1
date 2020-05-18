@@ -22,3 +22,4 @@ void imprimirNotebooks(eNotebook* notebook, int tam,eMarca* marca, eTipo* tipo);
 int altaNotebook(eNotebook* notebook,int tam, int idNotebook,eMarca* marca,eTipo* tipo);
 void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca, int idNotebook);
 void bajaNotebook(eNotebook* notebook, int tam, eMarca* marca, eTipo* tipo, int idNotebook);
+int hardcodearNotebooks(eNotebook* notebook, int cant);
