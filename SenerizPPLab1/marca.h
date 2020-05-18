@@ -10,3 +10,4 @@ typedef struct
 #endif // MARCA_H_INCLUDED
 
 void listarMarcas(eMarca* marca, int tam);
+int cargarDescripcionMarca(char descripcion[], int id, eMarca marcas[], int tam);

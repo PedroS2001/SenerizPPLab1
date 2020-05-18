@@ -18,7 +18,7 @@ void imprimirNotebook(eNotebook notebook, eMarca marca, eTipo tipo)
 
 }
 
-void imprimirNotebooks(eNotebook* notebook, int tam,eMarca marca[], eTipo* tipo)
+void imprimirNotebooks(eNotebook* notebook, int tam, eMarca marca[], eTipo* tipo)
 {
     int i;
     char descTipo[20];
@@ -26,7 +26,7 @@ void imprimirNotebooks(eNotebook* notebook, int tam,eMarca marca[], eTipo* tipo)
     printf("ID      MODELO       MARCA        TIPO      PRECIO\n");
     for(i=0; i<tam; i++)
     {
-        cargarDescripcionMarca(descMarca ,notebook[i].idMarca, marca[i].descripcion,4);
+        cargarDescripcionMarca(descMarca, notebook[i].idMarca, marca[i].descripcion,4);
         cargarDescripcionTipo(descTipo, notebook[i].idTipo, tipo[i].descripcion,4);
         imprimirNotebook(notebook[i], marca[i], tipo[i]);
     }
@@ -39,7 +39,6 @@ void inicializarNotebooks(eNotebook* notebook, int tam)
     {
         notebook[i].isEmpty = 1;
     }
-    printf("Note Inic");
 }
 
 int altaNotebook(eNotebook* notebook,int tam, int idNotebook, eMarca* marca, eTipo* tipo)
@@ -53,9 +52,9 @@ int altaNotebook(eNotebook* notebook,int tam, int idNotebook, eMarca* marca, eTi
     auxiliar.id = idNotebook;
     utn_getNombre(auxiliar.modelo,20,"Ingrese modelo de la notebook: ","Error\n",2);
     listarMarcas(marca,4);
-    utn_getNumero(&auxiliar.idMarca,"Ingrese el id de la marca de la notebook: ","Error\n",1,4,2);
+    utn_getNumero(&auxiliar.idMarca,"Ingrese el id de la marca de la notebook: ","Error\n",1000,1003,2);
     imprimirTipos(tipo,4);
-    utn_getNumero(&auxiliar.idTipo,"Ingrese el id del tipo de la notebook: ","Error\n",1,4,2);
+    utn_getNumero(&auxiliar.idTipo,"Ingrese el id del tipo de la notebook: ","Error\n",5000,5003,2);
     utn_getNumeroFlotante(&auxiliar.precio,"Ingrese precio de la notebook: ","Error\n",1,99999.9,2 );
 
 
@@ -66,14 +65,14 @@ int altaNotebook(eNotebook* notebook,int tam, int idNotebook, eMarca* marca, eTi
     return retorno;
 }
 
-void bajaNotebook(eNotebook* notebook, int tam, eMarca* marca, eTipo* tipo)
+void bajaNotebook(eNotebook* notebook, int tam, eMarca* marca, eTipo* tipo, int idNotebook)
 {
     int idABorrar;
     char confirma;
     system("cls");
     printf("***BAJA NOTEBOOK***\n\n");
     imprimirNotebooks(notebook,tam,marca,tipo);
-    utn_getNumero(&idABorrar,"Ingrese el id de la notebook a dar de baja: ", "Error\n", 1, tam, 2);
+    utn_getNumero(&idABorrar,"Ingrese el id de la notebook a dar de baja: ", "No existe notebook con ese id. Reingrese\n", 1, idNotebook-1, 2);
 
     imprimirNotebook(notebook[idABorrar],marca[idABorrar],tipo[idABorrar]);
 
@@ -92,7 +91,7 @@ void bajaNotebook(eNotebook* notebook, int tam, eMarca* marca, eTipo* tipo)
     }
 }
 
-void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca)
+void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca, int idNotebook)
 {
     int id;
     int modifica;
@@ -103,27 +102,34 @@ void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca)
 
     imprimirNotebooks(notebook,tam,marca,tipo);
 
-    if(utn_getNumero(&id,"Ingrese el id de la notebook a modificar: ", "Error\n", 1, tam, 2) != -1)
+    if(utn_getNumero(&id,"Ingrese el id de la notebook a modificar: ", "No existe notebook con ese id. Reingrese\n", 1, idNotebook-1, 2) != -1)
     {
-        imprimirNotebook(notebook[id],marca[id],tipo[id]);
-        printf("Que desea modificar de esta notebook? \n");
-        utn_getNumero(&modifica,"1)Precio2)Tipo3)Cancelar ","Error\n",1,3,2 );
-        if(modifica == 1)
+        if(notebook[id].isEmpty == 0)
         {
-            utn_getNumeroFlotante(&nuevoPrecio,"Ingrese nuevo precio: ", "Error\n", 1, 9999.9,2);
-            notebook[id].precio = nuevoPrecio;
-            printf("\n");
+            imprimirNotebook(notebook[id],marca[id],tipo[id]);
+            printf("Que desea modificar de esta notebook? \n");
+            utn_getNumero(&modifica,"1)Precio\n2)Tipo\n3)Cancelar ","Error\n",1,3,2 );
+            if(modifica == 1)
+            {
+                utn_getNumeroFlotante(&nuevoPrecio,"Ingrese nuevo precio: ", "Error\n", 1, 99999.9,2);
+                notebook[id].precio = nuevoPrecio;
+                printf("\n");
+            }
+            else if(modifica==2)
+            {
+                imprimirTipos(tipo,4);
+                utn_getNumero(&nuevoTipo,"Ingrese el id del nuevo tipo: ", "Error\n",5000,5003,2);
+                notebook[id].idTipo = nuevoTipo;
+                printf("\n");
+            }
+            else if(modifica==3)
+            {
+                printf("Se cancelo la modificacion\n");
+            }
         }
-        else if(modifica==2)
+        else
         {
-            imprimirTipos(tipo,4);
-            utn_getNumero(&nuevoTipo,"Ingrese el id del nuevo tipo: ", "Error\n",1,4,2);
-            notebook[id].idTipo = nuevoTipo;
-            printf("\n");
-        }
-        else if(modifica==3)
-        {
-            printf("Se cancelo la modificacion\n");
+            printf("Esa notebook fue eliminada \n");
         }
     }
 }

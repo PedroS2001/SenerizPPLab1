@@ -10,3 +10,4 @@ typedef struct
 
 #endif // TIPO_H_INCLUDED
 void imprimirTipos(eTipo* tipo, int tam);
+int cargarDescripcionTipo(char descripcion[], int id, eTipo tipos[], int tam);

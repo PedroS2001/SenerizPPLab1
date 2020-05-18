@@ -12,5 +12,5 @@ typedef struct
 #endif // SERVICIO_H_INCLUDED
 
 void listarServicios(eServicio* servicio, int tam);
-
+int cargarDescripcionServicio(char descripcion[], int id, eServicio servicios[], int tam);
 

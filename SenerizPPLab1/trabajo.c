@@ -54,55 +54,5 @@ void inicializarTrabajos(eTrabajo* trabajo, int tam)
     {
         trabajo[i].hayTrabajo = 1;
     }
-    printf("tab Inic");
 }
 
-
-
-int cargarDescripcionServicio(char descripcion[], int id, eServicio servicios[], int tam)
-{
-    int retorno = -1;
-    int i;
-
-    for(i=0; i<tam; i++)
-    {
-        if(servicios[i].id == id)
-        {
-            strcpy(descripcion,servicios[i].descripcion);
-            retorno = 0;
-        }
-    }
-    return retorno;
-}
-
-int cargarDescripcionTipo(char descripcion[], int id, eTipo tipos[], int tam)
-{
-    int retorno = -1;
-    int i;
-
-    for(i=0; i<tam; i++)
-    {
-        if(tipos[i].id == id)
-        {
-            strcpy(descripcion,tipos[i].descripcion);
-            retorno = 0;
-        }
-    }
-    return retorno;
-}
-
-int cargarDescripcionMarca(char descripcion[], int id, eMarca marcas[], int tam)
-{
-    int retorno = -1;
-    int i;
-
-    for(i=0; i<tam; i++)
-    {
-        if(marcas[i].id == id)
-        {
-            strcpy(descripcion,marcas[i].descripcion);
-            retorno = 0;
-        }
-    }
-    return retorno;
-}

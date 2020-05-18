@@ -18,21 +18,20 @@ char menu();
 int main()
 {
     eNotebook notebook[TAM];
-    eMarca hMarcas[4] = {{1,"Compaq"},{2,"Asus"},{3,"Acer"},{4,"HP"} };
-    eTipo hTipos[4] = {{1,"Gamer"},{2,"Disenio"},{3,"Ultrabook"},{4,"Normalita"} };
+    eMarca hMarcas[4] = {{1000,"Compaq"},{1001,"Asus"},{1002,"Acer"},{1003,"HP"} };
+    eTipo hTipos[4] = {{5000,"Gamer"},{5001,"Disenio"},{5002,"Ultrabook"},{5003,"Normalita"} };
     eServicio hServicios[4] = {{20000,"Bateria",250},{20001,"Antivirus",300},{20002,"Actualizacion",400},{20003,"Fuente",600}};
     eTrabajo trabajo[TAM];
 
-
-    inicializarTrabajos(trabajo,TAM);
 
     int flagAltas = 0;
     char rtamenu;
     int idNotebook = 1;
     int idTrabajo = 1;
 
-
+    inicializarTrabajos(trabajo,TAM);
     inicializarNotebooks(notebook,TAM);
+
     do
     {
         rtamenu = menu();
@@ -46,7 +45,7 @@ int main()
         case 'b':
             if(flagAltas)
             {
-                modificarNotebook(notebook,TAM,hTipos,hMarcas);
+                modificarNotebook(notebook,TAM,hTipos,hMarcas,idNotebook);
             }
             else
             {
@@ -56,7 +55,7 @@ int main()
         case 'c':
             if(flagAltas)
             {
-                bajaNotebook(notebook,TAM,hMarcas,hTipos);
+                bajaNotebook(notebook,TAM,hMarcas,hTipos, idNotebook);
             }
             else
             {
