@@ -312,7 +312,7 @@
 
 1589817624 c:\users\noel\desktop\senerizpplab1 - copia\marca.h
 
-1589895330 source:c:\users\noel\desktop\senerizpplab1 - copia\notebook.c
+1589899195 source:c:\users\noel\desktop\senerizpplab1 - copia\notebook.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -324,7 +324,7 @@
 	"utn.h"
 	"datawarehouse.h"
 
-1589855033 c:\users\noel\desktop\senerizpplab1 - copia\notebook.h
+1589899211 c:\users\noel\desktop\senerizpplab1 - copia\notebook.h
 	"marca.h"
 	"tipo.h"
 
@@ -332,7 +332,7 @@
 
 1589817614 c:\users\noel\desktop\senerizpplab1 - copia\servicio.h
 
-1589855175 c:\users\noel\desktop\senerizpplab1 - copia\trabajo.h
+1589898082 c:\users\noel\desktop\senerizpplab1 - copia\trabajo.h
 	"fecha.h"
 	"notebook.h"
 	"servicio.h"
@@ -354,7 +354,7 @@
 	<stdlib.h>
 	<string.h>
 
-1589896877 source:c:\users\noel\desktop\senerizpplab1 - copia\main.c
+1589899216 source:c:\users\noel\desktop\senerizpplab1 - copia\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -372,7 +372,7 @@
 	<string.h>
 	"tipo.h"
 
-1589897077 source:c:\users\noel\desktop\senerizpplab1 - copia\trabajo.c
+1589898095 source:c:\users\noel\desktop\senerizpplab1 - copia\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

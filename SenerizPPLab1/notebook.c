@@ -16,8 +16,9 @@
  * \param estructura de tipo
  */
 
-void imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo)
+int imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo)
 {
+    int retorno = -1;
     char descTipo[20];
     char descMarca[20];
     cargarDescripcionMarca(descMarca, notebook.idMarca,marca,4);
@@ -26,8 +27,10 @@ void imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo)
     if(notebook.isEmpty == 0)
     {
         printf("%2d  %10s  %10s    %10s    %.2f\n", notebook.id, notebook.modelo, descMarca, descTipo, notebook.precio);
+        retorno = 0;
     }
 
+    return retorno;
 }
 
 /** \brief imprime todas las notebooks cargadas con sus datos
@@ -64,13 +67,11 @@ void inicializarNotebooks(eNotebook* notebook, int tam)
     }
 }
 
-/** \brief da de alta una notebook, pidiento todos los datos y asigando un id automaticamente
+/** \brief Carga y da de alta una notebook con los parametros recibidos
  *
- * \param estructura de notebook
- * \param el tamaño de la estructura
+ * \param estructura de notebook en la que voy a cargar los datos
+ * \param Auxiliar de notebook del que voy a recibir los datos
  * \param el id que va a tener la notebook
- * \param estructura de marcas
- * \param estructura de tipos
  */
 
 void altaNotebook(eNotebook* notebookNueva, eNotebook datosNotebook, int id)
@@ -91,30 +92,35 @@ void altaNotebook(eNotebook* notebookNueva, eNotebook datosNotebook, int id)
  *
  */
 
-
 void bajaNotebook(eNotebook* notebook, int tam, eMarca* marca, eTipo* tipo, int idNotebook)
 {
     int idABorrar;
     char confirma;
     system("cls");
     printf("***BAJA NOTEBOOK***\n\n");
+
     imprimirNotebooks(notebook,tam,marca,tipo);
     utn_getNumero(&idABorrar,"Ingrese el id de la notebook a dar de baja: ", "No existe notebook con ese id. Reingrese\n", 1, idNotebook-1, 2);
 
-    imprimirNotebook(notebook[idABorrar],marca,tipo);
-
-    printf("Esta seguro que quiere dar de baja esta notebook?<s o n> ");
-    fflush(stdin);
-    scanf("%c",&confirma);
-
-    if(confirma == 's')
+    if(imprimirNotebook(notebook[idABorrar-1],marca,tipo)==0)
     {
-        notebook[idABorrar].isEmpty = 1;
-        printf("Notebook eliminada\n");
+        printf("Esta seguro que quiere dar de baja esta notebook? <s o n> ");
+        fflush(stdin);
+        scanf("%c",&confirma);
+
+        if(confirma == 's')
+        {
+            notebook[idABorrar-1].isEmpty = 1;
+            printf("Notebook eliminada\n");
+        }
+        else
+        {
+            printf("Se ha cancelado la baja\n");
+        }
     }
     else
     {
-        printf("Se ha cancelado la baja\n");
+        printf("\nEsa notebook ya fue eliminada\n\n");
     }
 }
 
@@ -141,22 +147,22 @@ void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca,
 
     if(utn_getNumero(&id,"Ingrese el id de la notebook a modificar: ", "No existe notebook con ese id. Reingrese\n", 1, idNotebook-1, 2) != -1)
     {
-        if(notebook[id].isEmpty == 0)
+        if(notebook[id-1].isEmpty == 0)
         {
-            imprimirNotebook(notebook[id],marca,tipo);
+            imprimirNotebook(notebook[id-1],marca,tipo);
             printf("Que desea modificar de esta notebook? \n");
             utn_getNumero(&modifica,"1)Precio\n2)Tipo\n3)Cancelar ","Error\n",1,3,2 );
             if(modifica == 1)
             {
                 utn_getNumeroFlotante(&nuevoPrecio,"Ingrese nuevo precio: ", "Error\n", 1, 99999.9,2);
-                notebook[id].precio = nuevoPrecio;
+                notebook[id-1].precio = nuevoPrecio;
                 printf("\n");
             }
             else if(modifica==2)
             {
                 listarTipos(tipo,4);
                 utn_getNumero(&nuevoTipo,"Ingrese el id del nuevo tipo: ", "Error\n",5000,5003,2);
-                notebook[id].idTipo = nuevoTipo;
+                notebook[id-1].idTipo = nuevoTipo;
                 printf("\n");
             }
             else if(modifica==3)
@@ -178,7 +184,7 @@ void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca,
  * \param estructura de marcas
  */
 
-void ordenarNotebooks(eNotebook* notebook,int len,eMarca* marca)
+void ordenarNotebooksPorMarcaYPrecio(eNotebook* notebook, int len, eMarca* marca)
 {
     eNotebook auxiliar;
     int i;
@@ -207,7 +213,7 @@ void ordenarNotebooks(eNotebook* notebook,int len,eMarca* marca)
     }
 }
 
-/** \brief hardcodea una cantidad de notebooks
+/** \brief hardcodea una cantidad X de notebooks
  *
  * \param estructura de notebooks
  * \param cantidad que quiero hardcodear
@@ -218,7 +224,7 @@ void ordenarNotebooks(eNotebook* notebook,int len,eMarca* marca)
 int hardcodearNotebooks(eNotebook* notebook, int cant)
 {
     int i;
-    for(i=0;i<cant;i++)
+    for(i=0; i<cant; i++)
     {
         notebook[i].id = hardodeIds[i];
         strcpy(notebook[i].modelo, hardcodeModelos[i]);
@@ -228,4 +234,35 @@ int hardcodearNotebooks(eNotebook* notebook, int cant)
         notebook[i].isEmpty = 0;
     }
     return 0;
+}
+
+/** \brief Ordena las notebooks por ID de forma ascendente
+ *
+ * \param la estructura de notebooks
+ * \param el tamaño de la estructura
+ * \return el array de marcas
+ */
+
+
+void ordenarXID(eNotebook* notebook,int len, eMarca* marca)
+{
+    eNotebook auxiliar;
+    int i;
+    int j;
+
+    for(i=0; i<len-1; i++)
+    {
+        for(j=i+1; j<len; j++)
+        {
+            if(notebook[i].isEmpty == 0 && notebook[j].isEmpty == 0)
+            {
+                if(notebook[i].id > notebook[j].id)
+                {
+                    auxiliar = notebook[i];
+                    notebook[i] = notebook[j];
+                    notebook[j] = auxiliar;
+                }
+            }
+        }
+    }
 }

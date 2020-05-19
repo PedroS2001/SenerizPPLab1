@@ -10,9 +10,9 @@
 #include "trabajo.h"
 #include "utn.h"
 
-#define TAMNOTE 10
-#define TTRABAJO 10
-#define CANTHARD 5
+#define TAMNOTE 20
+#define TTRABAJO 20
+#define CANTHARD 15
 
 char menu();
 
@@ -116,8 +116,9 @@ int main()
             printf("***NOTEBOOKS***\n");
             if(flagAltas)
             {
-                ordenarNotebooks(notebook,TAMNOTE,hMarcas);
+                ordenarNotebooksPorMarcaYPrecio(notebook,TAMNOTE,hMarcas);
                 imprimirNotebooks(notebook, TAMNOTE, hMarcas, hTipos);
+                ordenarXID(notebook,TAMNOTE,hMarcas);
             }
             else
             {
@@ -141,7 +142,6 @@ int main()
             system("cls");
             printf("***ALTA TRABAJO***\n");
             printf("%d\n\n",idTrabajo);
-
             imprimirNotebooks(notebook,TAMNOTE,hMarcas,hTipos);
             if(utn_getNumero(&auxTrabajo.idNotebook,"Ingrese el id de la notebook ", "Error\n", 1,idNotebook-1,2) == -1)
             {
@@ -217,7 +217,7 @@ char menu()
     printf("a)ALTA NOTEBOOK\n");
     printf("b)MODIFICAR NOTEBOOK\n");
     printf("c)BAJA NOTEBOOK\n");
-    printf("d)LISTAR NOTEBOOKS\n");
+    printf("d)LISTAR NOTEBOOKS POR MARCA Y PRECIO\n");
     printf("e)LISTAR MARCAS\n");
     printf("f)LISTAR TIPOS\n");
     printf("g)LISTAR SERVICIOS\n");

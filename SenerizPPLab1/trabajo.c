@@ -6,17 +6,11 @@
 #include "servicio.h"
 #include "utn.h"
 
-/** \brief da de alta un trabajo pidiendole al usuario que elija una notebook, un servicio e ingrese una fecha
+/** \brief da de alta un trabajo con los datos ya obtenidos
  *
- * \param estructura de trabajos
- * \param id que va a tener el trabajo
- * \param estructura de notebooks
- * \param tamaño de la estructura de notebooks
- * \param estructura de servicios
- * \param estructura de marcas
- * \param estructura de tipos
- *
- * \return 0 si pudo cargar el trabajo y -1 si tuvo algun error
+ * \param estructura de trabajos en la que voy a cargar los datos
+ * \param auxiliar de trabajo en el que tengo los datos
+ * \param  id que va a recibir el trabajo
  */
 
 void altaTrabajo(eTrabajo* trabajo, eTrabajo auxTrabajo, int id)
@@ -26,14 +20,12 @@ void altaTrabajo(eTrabajo* trabajo, eTrabajo auxTrabajo, int id)
     trabajo[id-1].isEmpty = 0;
 }
 
-/** \brief imprime los trabajos dados de alta
+/** \brief imprime los trabajos dados de alta con el id de la notebook, el servicio y la fecha
  *
  * \param estructura de trabajos
  * \param tamaño de la estructura de trabajos
  * \param estructura de servicios
  * \param cantidad de servicios
- * \return
- *
  */
 
 void listarTrabajos(eTrabajo* trabajo, int tam, eServicio servicios[], int tamser)

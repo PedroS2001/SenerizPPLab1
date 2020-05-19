@@ -18,9 +18,10 @@ typedef struct
 
 void inicializarNotebooks(eNotebook* notebook, int tam);
 
-void imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo);
+int imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo);
 void imprimirNotebooks(eNotebook* notebook, int tam,eMarca* marca, eTipo* tipo);
-void ordenarNotebooks(eNotebook* notebook,int len,eMarca* marca);
+void ordenarNotebooksPorMarcaYPrecio(eNotebook* notebook,int len,eMarca* marca);
+void ordenarXID(eNotebook* notebook,int len, eMarca* marca);
 
 void altaNotebook(eNotebook* notebookNueva, eNotebook datosNotebook, int id);
 void modificarNotebook(eNotebook* notebook, int tam, eTipo* tipo, eMarca* marca, int idNotebook);
