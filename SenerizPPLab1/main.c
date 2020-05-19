@@ -10,28 +10,31 @@
 #include "trabajo.h"
 #include "utn.h"
 
-#define TAM 10
-#define CANTHARD 10
+#define TAMNOTE 10
+#define TTRABAJO 10
+#define CANTHARD 5
 
 char menu();
 
 
 int main()
 {
-    eNotebook notebook[TAM];
+    eNotebook notebook[TAMNOTE];
     eMarca hMarcas[] = {{1000,"Compaq"},{1001,"Asus"},{1002,"Acer"},{1003,"HP"} };
     eTipo hTipos[] = {{5000,"Gamer"},{5001,"Disenio"},{5002,"Ultrabook"},{5003,"Normalita"} };
     eServicio hServicios[] = {{20000,"Bateria",250},{20001,"Antivirus",300},{20002,"Actualizacion",400},{20003,"Fuente",600}};
-    eTrabajo trabajo[TAM];
+    eTrabajo trabajo[TTRABAJO];
 
+    eNotebook auxNotebook;
+    eTrabajo auxTrabajo;
 
     int flagAltas = 0;
     char rtamenu;
     int idNotebook = 1;
     int idTrabajo = 1;
 
-    inicializarTrabajos(trabajo,TAM);
-    inicializarNotebooks(notebook,TAM);
+    inicializarTrabajos(trabajo,TTRABAJO);
+    inicializarNotebooks(notebook,TAMNOTE);
 
     hardcodearNotebooks(notebook,CANTHARD);
     flagAltas = 1;
@@ -44,48 +47,81 @@ int main()
         switch(rtamenu)
         {
         case 'a':
-            if(idNotebook <= TAM)
+            if(idNotebook <= TAMNOTE)
             {
+                system("cls");
+                printf("***ALTA NOTEBOOK***\n\n");
+                printf("ID %d\n",idNotebook);
+                if(utn_getNombre(auxNotebook.modelo,20,"Ingrese modelo de la notebook: ","Error",2) == -1)
+                {
+                    printf("ALTA INTERRUMPIDA\n");
+                    printf("\nError al ingresar el modelo\n\n");
+                    break;
+                }
 
-                altaNotebook(notebook,TAM,idNotebook,hMarcas,hTipos);
+                listarMarcas(hMarcas,4);
+                if(utn_getNumero(&auxNotebook.idMarca,"Ingrese el id de la marca de la notebook: ","Error\n",1000,1003,2) == -1)
+                {
+                    printf("ALTA INTERRUMPIDA\n");
+                    printf("\nError al ingresar la marca\n\n");
+                    break;
+                }
+
+                listarTipos(hTipos,4);
+                if(utn_getNumero(&auxNotebook.idTipo,"Ingrese el id del tipo de la notebook: ","Error\n",5000,5003,2) == -1)
+                {
+                    printf("ALTA INTERRUMPIDA\n");
+                    printf("\nError al ingresar el tipo\n\n");
+                    break;
+                }
+
+                if(utn_getNumeroFlotante(&auxNotebook.precio,"Ingrese precio de la notebook: ","Error\n",1,99999.9,2 ) == -1)
+                {
+                    printf("ALTA INTERRUMPIDA\n");
+                    printf("\nError al ingresar el precio\n\n");
+                    break;
+                }
+                altaNotebook(notebook, auxNotebook, idNotebook);
+
                 idNotebook++;
                 flagAltas = 1;
+                printf("\nSE DIO DE ALTA UNA NOTEBOOK\n\n");
             }
             else
             {
-                printf("No hay lugar disponible\n");
+                printf("\nNO HAY LUGAR DISPONIBLE\n\n");
             }
             break;
         case 'b':
             if(flagAltas)
             {
-                modificarNotebook(notebook,TAM,hTipos,hMarcas,idNotebook);
+                modificarNotebook(notebook,TAMNOTE,hTipos,hMarcas,idNotebook);
             }
             else
             {
-                printf("Primero hay que dar un empleado de alta\n");
+                printf("Primero hay que dar una notebook de alta\n");
             }
             break;
         case 'c':
             if(flagAltas)
             {
-                bajaNotebook(notebook,TAM,hMarcas,hTipos, idNotebook);
+                bajaNotebook(notebook,TAMNOTE,hMarcas,hTipos, idNotebook);
             }
             else
             {
-                printf("Primero hay que dar un empleado de alta\n");
+                printf("Primero hay que dar una notebook de alta\n");
             }
             break;
         case 'd':
             printf("***NOTEBOOKS***\n");
             if(flagAltas)
             {
-                ordenarNotebooks(notebook,TAM,hMarcas);
-                imprimirNotebooks(notebook, TAM, hMarcas, hTipos);
+                ordenarNotebooks(notebook,TAMNOTE,hMarcas);
+                imprimirNotebooks(notebook, TAMNOTE, hMarcas, hTipos);
             }
             else
             {
-                printf("Primero hay que dar un empleado de alta\n");
+                printf("Primero hay que dar una notebook de alta\n");
             }
             break;
         case 'e':
@@ -101,13 +137,63 @@ int main()
             listarServicios(hServicios,4);
             break;
         case 'h':
-            if(altaTrabajo(trabajo,idTrabajo,notebook,TAM,hServicios,hMarcas,hTipos));
+
+            system("cls");
+            printf("***ALTA TRABAJO***\n");
+            printf("%d\n\n",idTrabajo);
+
+            imprimirNotebooks(notebook,TAMNOTE,hMarcas,hTipos);
+            if(utn_getNumero(&auxTrabajo.idNotebook,"Ingrese el id de la notebook ", "Error\n", 1,idNotebook-1,2) == -1)
             {
-                idTrabajo++;
+                printf("ERROR AL CARGAR EL ID\n");
+                break;
             }
+
+            listarServicios(hServicios,4);
+            if(utn_getNumero(&auxTrabajo.idServicio, "Ingrese el id del servicio ", "Error\n",20000,20003,2) == -1)
+            {
+                printf("ERROR AL CARGAR EL SERVICIO\n");
+                break;
+
+            }
+
+            if(utn_getNumero(&auxTrabajo.fecha.dia,"Ingrese el dia: ", "Dia invalido\n",1,31,2) == -1)
+            {
+                printf("ERROR AL CARGAR EL DIA\n");
+                break;
+
+            }
+
+            if(utn_getNumero(&auxTrabajo.fecha.mes,"Ingrese el mes: ", "Mes invalido\n",1,12,2)== -1)
+            {
+                printf("ERROR AL CARGAR EL MES\n");
+                break;
+
+            }
+
+            if(utn_getNumero(&auxTrabajo.fecha.anio,"Ingrese el anio: ", "Anio invalido. Los registros van desde 2010 a 2020\n",2010,2020,2)== -1)
+            {
+                printf("ERROR AL CARGAR EL ANIO\n");
+                break;
+
+            }
+
+            altaTrabajo(trabajo,auxTrabajo,idTrabajo);
+            idTrabajo++;
+
             break;
         case 'i':
-            listarTrabajos(trabajo,TAM,hServicios,4);
+            if(idTrabajo > 1)
+            {
+                system("cls");
+                printf("***TRABAJOS***\n\n");
+                imprimirNotebooks(notebook,TAMNOTE,hMarcas,hTipos);
+                listarTrabajos(trabajo,TTRABAJO,hServicios,4);
+            }
+            else
+            {
+                printf("\nPRIMERO DEBE DAR DE ALTA ALGUN TRABAJO\n\n");
+            }
             break;
         case 'j':
             printf("Saliendo\n");

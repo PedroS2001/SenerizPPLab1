@@ -38,7 +38,7 @@ void imprimirNotebook(eNotebook notebook, eMarca* marca, eTipo* tipo)
  *
  */
 
-void imprimirNotebooks(eNotebook* notebook, int tam, eMarca marca[], eTipo* tipo)
+void imprimirNotebooks(eNotebook* notebook, int tam, eMarca* marca, eTipo* tipo)
 {
     int i;
 
@@ -71,37 +71,13 @@ void inicializarNotebooks(eNotebook* notebook, int tam)
  * \param el id que va a tener la notebook
  * \param estructura de marcas
  * \param estructura de tipos
- * \return 0 si lo pudo cargar o -1 si no pudo
  */
 
-int altaNotebook(eNotebook* notebook,int tam, int idNotebook, eMarca* marca, eTipo* tipo)
+void altaNotebook(eNotebook* notebookNueva, eNotebook datosNotebook, int id)
 {
-    int retorno = -1;
-    eNotebook auxiliar;
-
-    system("cls");
-    printf("***ALTA NOTEBOOK***\n\n");
-    printf("ID %d\n",idNotebook);
-
-    auxiliar.id = idNotebook;
-
-    utn_getNombre(auxiliar.modelo,20,"Ingrese modelo de la notebook: ","Error\n",2);
-
-    listarMarcas(marca,4);
-    utn_getNumero(&auxiliar.idMarca,"Ingrese el id de la marca de la notebook: ","Error\n",1000,1003,2);
-
-    listarTipos(tipo,4);
-    utn_getNumero(&auxiliar.idTipo,"Ingrese el id del tipo de la notebook: ","Error\n",5000,5003,2);
-
-    utn_getNumeroFlotante(&auxiliar.precio,"Ingrese precio de la notebook: ","Error\n",1,99999.9,2 );
-
-
-    notebook[idNotebook] = auxiliar;
-    notebook[idNotebook].isEmpty = 0;
-
-    retorno = 0;
-
-    return retorno;
+    notebookNueva[id-1] = datosNotebook;
+    notebookNueva[id-1].id = id;
+    notebookNueva[id-1].isEmpty = 0;
 }
 
 /** \brief da de baja una notebook que ya estaba cargada

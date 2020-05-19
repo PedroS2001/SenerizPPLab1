@@ -19,26 +19,11 @@
  * \return 0 si pudo cargar el trabajo y -1 si tuvo algun error
  */
 
-int altaTrabajo(eTrabajo* trabajo, int id, eNotebook* notebook, int tamnot, eServicio* servicio, eMarca* marca, eTipo* tipo)
+void altaTrabajo(eTrabajo* trabajo, eTrabajo auxTrabajo, int id)
 {
-    int retorno = -1;
-    eTrabajo auxiliar;
-    auxiliar.id = id;
-
-    printf("%d",id);
-    imprimirNotebooks(notebook,tamnot,marca,tipo);
-    utn_getNumero(&auxiliar.idNotebook,"Ingrese el id de la notebook ", "Error\n", 1,tamnot,2 );
-    listarServicios(servicio,4);
-    utn_getNumero(&auxiliar.idServicio, "Ingrese el id del servicio ", "Error\n",20000,20004,2 );
-    utn_getNumero(&auxiliar.fecha.dia,"Ingrese el dia: ", "Dia invalido\n",1,31,2 );
-    utn_getNumero(&auxiliar.fecha.mes,"Ingrese el mes: ", "Mes invalido\n",1,12,2 );
-    utn_getNumero(&auxiliar.fecha.anio,"Ingrese el anio: ", "Anio invalido. Los registros van desde 2010 a 2020\n",2010,2020,2 );
-    auxiliar.hayTrabajo = 0;
-
-    trabajo[id] = auxiliar;
-    retorno = 0;
-
-    return retorno;
+    trabajo[id-1] = auxTrabajo;
+    trabajo[id-1].id = id;
+    trabajo[id-1].hayTrabajo = 0;
 }
 
 /** \brief imprime los trabajos dados de alta

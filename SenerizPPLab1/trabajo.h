@@ -17,7 +17,7 @@ typedef struct
 
 
 void inicializarTrabajos(eTrabajo* trabajo, int tam);
-int altaTrabajo(eTrabajo* trabajo, int id, eNotebook* notebook, int tamnot, eServicio* servicio, eMarca* marca, eTipo* tipo);
+void altaTrabajo(eTrabajo* trabajo, eTrabajo auxTrabajo, int id);
 void listarTrabajos(eTrabajo* trabajo, int tam, eServicio servicios[], int tamser);
 
 
