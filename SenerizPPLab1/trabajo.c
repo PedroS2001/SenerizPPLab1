@@ -23,7 +23,7 @@ void altaTrabajo(eTrabajo* trabajo, eTrabajo auxTrabajo, int id)
 {
     trabajo[id-1] = auxTrabajo;
     trabajo[id-1].id = id;
-    trabajo[id-1].hayTrabajo = 0;
+    trabajo[id-1].isEmpty = 0;
 }
 
 /** \brief imprime los trabajos dados de alta
@@ -45,7 +45,7 @@ void listarTrabajos(eTrabajo* trabajo, int tam, eServicio servicios[], int tamse
 
     for(i=0; i<tam; i++)
     {
-        if(trabajo[i].hayTrabajo == 0)
+        if(trabajo[i].isEmpty == 0)
         {
             cargarDescripcionServicio(nombreServicio,trabajo[i].idServicio,servicios,tamser);
             printf("  %d         %15s        %02d/%02d/%04d\n",trabajo[i].idNotebook,nombreServicio,trabajo[i].fecha.dia,trabajo[i].fecha.mes,trabajo[i].fecha.anio);
@@ -65,7 +65,7 @@ void inicializarTrabajos(eTrabajo* trabajo, int tam)
     int i;
     for(i=0; i<tam; i++)
     {
-        trabajo[i].hayTrabajo = 1;
+        trabajo[i].isEmpty = 1;
     }
 }
 

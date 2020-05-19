@@ -73,7 +73,7 @@
 
 1589371736 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\utn.h
 
-1589817603 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\marca.c
+1589839880 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\marca.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -81,7 +81,7 @@
 
 1589817624 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\marca.h
 
-1589837258 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.c
+1589895330 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -93,15 +93,15 @@
 	"utn.h"
 	"datawarehouse.h"
 
-1589832488 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.h
+1589855033 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\notebook.h
 	"marca.h"
 	"tipo.h"
 
-1589817647 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\tipo.h
+1589838173 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\tipo.h
 
 1589817614 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\servicio.h
 
-1589817633 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\trabajo.h
+1589898082 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\trabajo.h
 	"fecha.h"
 	"notebook.h"
 	"servicio.h"
@@ -110,19 +110,19 @@
 
 1589371736 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\utn.h
 
-1589817578 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\servicio.c
+1589841315 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\servicio.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"servicio.h"
 
-1589817591 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\tipo.c
+1589841393 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\tipo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"tipo.h"
 
-1589832359 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\trabajo.c
+1589898095 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\trabajo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -136,7 +136,7 @@
 	<stdlib.h>
 	<string.h>
 
-1589832509 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\main.c
+1589896877 source:c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -148,7 +148,7 @@
 	"trabajo.h"
 	"utn.h"
 
-1589815149 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\datawarehouse.h
+1589895089 c:\users\noel\desktop\pedro\1_programacion y laboratorio i\2020\senerizpplab1\senerizpplab1\datawarehouse.h
 
 1589829828 source:c:\users\noel\desktop\copias\senerizpplab1 - copia (2)\main.c
 	<stdio.h>

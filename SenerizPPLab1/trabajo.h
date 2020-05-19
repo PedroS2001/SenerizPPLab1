@@ -10,7 +10,7 @@ typedef struct
     int idNotebook;
     int idServicio;
     eFecha fecha;
-    int hayTrabajo;
+    int isEmpty;
 }eTrabajo;
 
 #endif // TRABAJO_H_INCLUDED
